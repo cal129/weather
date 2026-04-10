@@ -1,0 +1,27 @@
+.search-bar {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.search-bar input {
+  flex: 1;
+  padding: 0.5rem;
+}
+
+.weather-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.temp {
+  font-size: 3rem;
+  margin: 0.5rem 0;
+}
+
+.condition {
+  text-transform: capitalize;
+  color: #555;
+}
