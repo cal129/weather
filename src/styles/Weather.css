@@ -1,0 +1,215 @@
+.search-bar {
+  display: grid;
+  gap: 10px;
+}
+
+.search-bar__label {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: rgba(244, 246, 255, 0.84);
+}
+
+.search-bar__controls {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 12px;
+}
+
+.search-bar__input {
+  min-width: 0;
+  border: 1px solid rgba(141, 185, 255, 0.22);
+  border-radius: 16px;
+  padding: 16px 18px;
+  color: #f4f6ff;
+  background: rgba(11, 16, 32, 0.58);
+  backdrop-filter: blur(16px);
+  outline: none;
+  transition: border-color 160ms ease, transform 160ms ease, box-shadow 160ms ease;
+}
+
+.search-bar__input::placeholder {
+  color: rgba(244, 246, 255, 0.46);
+}
+
+.search-bar__input:focus {
+  border-color: rgba(147, 217, 255, 0.68);
+  box-shadow: 0 0 0 4px rgba(76, 154, 255, 0.18);
+}
+
+.search-bar__button {
+  border: 0;
+  border-radius: 16px;
+  padding: 0 22px;
+  min-width: 128px;
+  color: #09111f;
+  background: linear-gradient(135deg, #b4dbff 0%, #7ad0ff 100%);
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 160ms ease, filter 160ms ease;
+}
+
+.search-bar__button:hover:not(:disabled) {
+  transform: translateY(-1px);
+  filter: brightness(1.04);
+}
+
+.search-bar__button:disabled {
+  cursor: progress;
+  opacity: 0.7;
+}
+
+.weather-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(141, 185, 255, 0.18);
+  border-radius: 28px;
+  padding: 28px;
+  background: linear-gradient(180deg, rgba(16, 24, 48, 0.88), rgba(13, 20, 41, 0.72));
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.26);
+}
+
+.weather-card::after {
+  content: '';
+  position: absolute;
+  inset: auto -15% -25% auto;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(122, 208, 255, 0.18) 0%, transparent 68%);
+  pointer-events: none;
+}
+
+.weather-card__hero {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: start;
+}
+
+.weather-card__eyebrow {
+  margin: 0 0 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 0.74rem;
+  color: #8db9ff;
+}
+
+.weather-card__title {
+  margin: 0;
+  font-size: clamp(1.5rem, 3vw, 2.4rem);
+  line-height: 1.05;
+}
+
+.weather-card__condition {
+  margin: 10px 0 0;
+  color: rgba(244, 246, 255, 0.78);
+}
+
+.weather-card__temp-wrap {
+  text-align: right;
+}
+
+.weather-card__temp {
+  display: block;
+  font-size: clamp(3.4rem, 8vw, 6rem);
+  line-height: 0.88;
+  font-weight: 700;
+  letter-spacing: -0.08em;
+}
+
+.weather-card__feels-like {
+  display: block;
+  margin-top: 8px;
+  color: rgba(244, 246, 255, 0.74);
+}
+
+.weather-card__stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.weather-card__stat {
+  border-radius: 18px;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.weather-card__stat-label,
+.weather-card__stat-value {
+  display: block;
+}
+
+.weather-card__stat-label {
+  color: rgba(244, 246, 255, 0.62);
+  font-size: 0.86rem;
+}
+
+.weather-card__stat-value {
+  margin-top: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.weather-card__forecast {
+  margin-top: 28px;
+}
+
+.weather-card__forecast-title {
+  margin: 0 0 14px;
+  font-size: 1rem;
+  color: rgba(244, 246, 255, 0.82);
+}
+
+.forecast-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.forecast-list__item {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+  padding: 14px 16px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.forecast-list__day {
+  color: rgba(244, 246, 255, 0.82);
+}
+
+.forecast-list__temp {
+  font-weight: 700;
+}
+
+@media (max-width: 720px) {
+  .search-bar__controls,
+  .weather-card__hero,
+  .weather-card__stats,
+  .forecast-list__item {
+    grid-template-columns: 1fr;
+  }
+
+  .search-bar__button {
+    width: 100%;
+    min-height: 48px;
+  }
+
+  .weather-card__temp-wrap {
+    text-align: left;
+  }
+
+  .weather-card__stats {
+    grid-template-columns: 1fr;
+  }
+
+  .forecast-list__item {
+    display: grid;
+  }
+}
