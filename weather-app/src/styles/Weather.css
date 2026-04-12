@@ -30,10 +30,31 @@
   margin-bottom: 1rem;
 }
 
+.recent-searches__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
 .recent-searches__label {
   margin: 0 0 0.5rem;
   color: #444;
   font-size: 0.9rem;
+}
+
+.recent-searches__clear {
+  border: 0;
+  background: transparent;
+  color: #666;
+  font-size: 0.85rem;
+  cursor: pointer;
+  padding: 0;
+  margin-bottom: 0.5rem;
+}
+
+.recent-searches__clear:hover {
+  color: #222;
 }
 
 .recent-searches__list {

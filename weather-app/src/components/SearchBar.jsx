@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function SearchBar({ onSearch, recentSearches = [] }) {
+function SearchBar({ onSearch, recentSearches = [], onClearRecent }) {
   const [city, setCity] = useState("");
 
   async function handleSubmit(e) {
@@ -36,7 +36,16 @@ function SearchBar({ onSearch, recentSearches = [] }) {
 
       {recentSearches.length > 0 && (
         <div className="recent-searches">
-          <p className="recent-searches__label">Recent:</p>
+          <div className="recent-searches__header">
+            <p className="recent-searches__label">Recent:</p>
+            <button
+              type="button"
+              className="recent-searches__clear"
+              onClick={onClearRecent}
+            >
+              Clear
+            </button>
+          </div>
           <div className="recent-searches__list">
             {recentSearches.map((recentCity) => (
               <button

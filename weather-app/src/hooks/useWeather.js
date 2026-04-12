@@ -20,6 +20,14 @@ function saveRecentSearches(cities) {
   }
 }
 
+function clearSavedRecentSearches() {
+  try {
+    localStorage.removeItem(RECENT_SEARCHES_KEY);
+  } catch {
+    // Ignore storage errors so search still works.
+  }
+}
+
 export function useWeather() {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -60,5 +68,10 @@ export function useWeather() {
     }
   }
 
-  return { data, loading, error, search, recentSearches };
+  function clearRecentSearches() {
+    setRecentSearches([]);
+    clearSavedRecentSearches();
+  }
+
+  return { data, loading, error, search, recentSearches, clearRecentSearches };
 }
