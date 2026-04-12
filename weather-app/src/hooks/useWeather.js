@@ -50,9 +50,11 @@ export function useWeather() {
       const result = await fetchWeather(city);
       setData(result);
       updateRecentSearches(city);
+      return true;
     } catch (err) {
       setError(err.message);
       setData(null);
+      return false;
     } finally {
       setLoading(false);
     }

@@ -3,9 +3,23 @@ import { useState } from "react";
 function SearchBar({ onSearch, recentSearches = [] }) {
   const [city, setCity] = useState("");
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
-    if (city.trim()) onSearch(city);
+
+    const query = city.trim();
+    if (!query) {
+      return;
+    }
+
+    const success = await onSearch(query);
+    if (success) {
+      setCity("");
+    }
+  }
+
+  async function handleRecentClick(recentCity) {
+    setCity(recentCity);
+    await onSearch(recentCity);
   }
 
   return (
@@ -29,7 +43,7 @@ function SearchBar({ onSearch, recentSearches = [] }) {
                 key={recentCity.toLowerCase()}
                 type="button"
                 className="recent-searches__item"
-                onClick={() => onSearch(recentCity)}
+                onClick={() => handleRecentClick(recentCity)}
               >
                 {recentCity}
               </button>
