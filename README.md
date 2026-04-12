@@ -2,11 +2,13 @@
 
 A simple weather search app built with React and Open-Meteo.
 
+
+
 ## Getting Started
 
 1. Navigate to the project folder:
    ```bash
-   cd weather-app
+   cd weather/weather-app
    ```
 
 2. Install dependencies:
@@ -26,6 +28,8 @@ A simple weather search app built with React and Open-Meteo.
 - Search for any city to see current weather
 - Temperature and weather condition display
 - Powered by Open-Meteo (no API key required)
+- Recent searches with one-click repeat
+- Clear saved recent searches
 
 ## Scripts
 
