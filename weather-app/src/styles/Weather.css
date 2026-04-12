@@ -25,3 +25,31 @@
   text-transform: capitalize;
   color: #555;
 }
+
+.recent-searches {
+  margin-bottom: 1rem;
+}
+
+.recent-searches__label {
+  margin: 0 0 0.5rem;
+  color: #444;
+  font-size: 0.9rem;
+}
+
+.recent-searches__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.recent-searches__item {
+  border: 1px solid #d6d6d6;
+  background: #f7f7f7;
+  border-radius: 999px;
+  padding: 0.3rem 0.7rem;
+  cursor: pointer;
+}
+
+.recent-searches__item:hover {
+  background: #ececec;
+}
